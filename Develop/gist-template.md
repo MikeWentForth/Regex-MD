@@ -4,7 +4,7 @@ Introductory paragraph (replace this with your text)
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+/[A-Za-z0-9]{8,}/ would match any string that has a Capitalized A-Z, Lowercase A-Z, Numbers 0-9, and must be 8 or more characters long. This could be used to find or validate passwords with the specific set RegEx criteria.
 
 ## Table of Contents
 
@@ -44,15 +44,36 @@ Flags are almost like a filtering syastem the user can place before searching. T
 
 ### Grouping and Capturing
 
+Grouping is a way of organizing your search based on sectioning off pieces in parenthesis in order to capture matches. 
+
 ### Bracket Expressions
+
+Brackets allow the user to narrow down their results by a specific range. Example - /ab/ would yield every "ab" in the document. /[ab]/ as a bracket expression would yield every "a" as well as every "b" in the document. 
+
 
 ### Greedy and Lazy Match
 
+A greedy search attempts to find the largest possible match for a pattern. It is the default behavior.
+
+A lazy search attempts to find the smallest possible match for a pattern. It is forced by adding a ? after the quantifier.
+
+Example: .....
+
+Greddy searches are made by default for the user to be able to capture everything within the pattern they're searching. By adding a "?" to the search, the user is using a "lazy match" that only displays the result of the first found pattern. 
+
 ### Boundaries
+
+Boundaries allow the user to set a "\b" at the beginning or end of the pattern they're searching for. This will result in the user getting exactly the keyword they searched for with no additional letters attached. Example -"with" would result in with, withhold, wither, withdraw, etc. "\bwith\b" would result in only finding "with" and not other works such as "withhold", "wither", "withdraw".
 
 ### Back-references
 
+Back references allows the user to recall previously typed pattern searches and recall them by their group number with a "\2" sign.   
+
+
+
 ### Look-ahead and Look-behind
+
+
 
 ## Author
 
