@@ -4,6 +4,8 @@ Introductory paragraph (replace this with your text)
 
 ## Summary
 
+Below is a RegEx pattern example
+
 /[A-Za-z0-9]{8,}/ would match any string that has a Capitalized A-Z, Lowercase A-Z, Numbers 0-9, and must be 8 or more characters long. This could be used to find or validate passwords with the specific set RegEx criteria.
 
 ## Table of Contents
@@ -26,9 +28,13 @@ Introductory paragraph (replace this with your text)
 
 Anchors are considered placeholders where text begins or ends. They are used as "^" in the beginning of a word or "$" at the end of a word. 
 
+Using the password example, we could add ^ and $ to the pattern as /^[A-Za-z0-9]{8,}$/ to indicate that the password string should be the entire string, with nothing before or after it.
+
 ### Quantifiers
 
-Quantifiers identify various quantities of what the user is searching for. Ex- "*" placed after the keyword meaning "any" of what the user is searching for. The "+" sign after the keyword would mean the the pattern must appear at least once. A "?" sign after the keyword would indicate the pattern must appear 0- 1 times in the paragraoh. Any numbers wrapped in "{}" placed after te keyword would incicate how many times the user wants to recognize the pattern in the source string.
+Quantifiers identify various quantities of what the user is searching for. Ex- "*" placed after the keyword meaning "any" of what the user is searching for. The "+" sign after the keyword would mean the the pattern must appear at least once. A "?" sign after the keyword would indicate the pattern must appear 0- 1 times in the paragraoh. Any numbers wrapped in "{}" placed after te keyword would incicate how many times the user wants to recognize the pattern in the source string. 
+
+An example would be the "{8,} suggesting that the password must be at least 8 characters long. /^[A-Za-z0-9]{8,}$/
 
 ### OR Operator
 
@@ -38,13 +44,22 @@ The OR Operator allows the user to user multiple search functionalities with the
 
 Character classes are a collection of related symbols usually wrapped in square brackets []. The common classes are letters, numbers, white spaces, etc. Regex has special syntax that assists in this such as "\w" for word letters, numbers, underscores & "\d" for numbers, & "\s" for inserting a white space in betwween keyword entries. 
 
+Ex - /^\w{8,}$/ would be a shortened way of writing the exact same line of code on line 37 by utilizing Character Classes.
+
 ### Flags
 
-Flags are almost like a filtering syastem the user can place before searching. This allows the user to narrow down their search based on which flag they've chosen. 
+Flags are almost like a filtering syastem the user can place before searching. This allows the user to narrow down their search based on which flag they've chosen. They're a letter added to the end of the pattern  
+
+/pattern/i would indicate that to perform the match without considering capitalization. /test/i will match TEST, test, and TeSt, etc., but /test/ (without the i) would only match "test." 
+
 
 ### Grouping and Capturing
 
 Grouping is a way of organizing your search based on sectioning off pieces in parenthesis in order to capture matches. 
+
+Grouping "or" is when we use parentheses and the pipe (|) symbol to have options in the pattern. (Hi|Hello|Howdy|Yoyo) would match any of those words.
+
+Grouping "capturing" is when use parentheses to recall some part of the matched pattern. /Hello (\w+)/ would match "Hello " followed by some text and "capture" the word that followed "Hello".
 
 ### Bracket Expressions
 
@@ -73,11 +88,13 @@ Back references allows the user to recall previously typed pattern searches and 
 
 ### Look-ahead and Look-behind
 
+The look ahead allows the user to sarch for a keyword pattern that is followed by another pattern. This will retrieve the first pattern the user is searching for without displaying the second pattern. Look behind functions the exact same way, except in reverse. 
+
 
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+
 
 <!-- GIVEN a regex tutorial
 
